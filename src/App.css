@@ -1,38 +1,225 @@
-.App {
-  text-align: center;
+.app {
+    background-color: #a7bcff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .app-container {
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 65%;
+        height: 88%;
+        margin-top: 40px;
+        display: flex;
+        overflow: hidden;
+
+        .sidebar {
+            flex: 1;
+            background-color: #3e3c61;
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                background-color: #2f2d52;
+                height: 50px;
+                padding: 10px;
+                color: azure;
+                justify-content: space-between;
+            }
+
+            .logo {
+                font-weight: bold;
+            }
+
+            .nav-user {
+                display: flex;
+                gap: 10px;
+
+                .n-img {
+                    background-color: #ddddf7;
+                    height: 27px;
+                    width: 27px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+            }
+
+            .search {
+                border-bottom: 1px solid gray;
+
+                .searchform {
+                    padding: 10px;
+
+                    .s-input {
+                        background-color: transparent;
+                        color: white;
+                        width: 96%;
+
+                        &::placeholder {
+                            color: lightseagreen;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userchat {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ddddf7;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .s-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userchatinfo span {
+    font-size: 18px;
+    font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.userchatinfo p {
+    font-size: 15px;
+    color: lightsteelblue;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+/*----------------------Chat-------------------*/
+.chat {
+    flex: 2;
+
+    .chatinfo {
+        height: 50px;
+        display: flex;
+        background-color: #5d5d8d;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        color: lightsteelblue;
+    }
+
+    .chaticon {
+        display: flex;
+        gap: 10px;
+        height: 24px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*-------------------Meassages-----------------*/
+.messages {
+    background-color: #ddddf7;
+    padding: 10px;
+    height: calc(100% - 160px);
+    overflow: scroll;
+}
+
+.message {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+
+&.owner{
+    flex-direction: row-reverse;
+}
+.messagecontent {
+    align-items: flex-end;
+}  
+
+    .messagecontent p{
+        background-color: #a7bcff;
+        color: white;
+        border-radius: 10px 0px 10px 10px;
+    }
+
+}
+.messageinfo {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    font-weight: 300;
+}
+
+.messageinfo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.messagecontent {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.messagecontent p {
+    background-color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 0px 10px 10px 10px;
+    max-width: max-content;
+}
+
+.messagecontent img {
+    width: 50%;
+}
+
+/*-----------------input-------------*/
+.I-input {
+    height: 50px;
+    background-color: azure;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.I-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #2f2d52;
+    font-size: 18px;
+
+    &::placeholder {
+        color: lightseagreen;
+    }
+}
+
+.i-send {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.i-send svg {
+    height: 24px;
+    cursor: pointer;
+}
+
+.i-send button {
+    border: none;
+    padding: 10px 15px;
+    color: #adbffc;
+    background-color: #839ef7;
+    cursor: pointer;
 }
